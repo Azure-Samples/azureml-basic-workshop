@@ -1,0 +1,13 @@
+channels:
+  - defaults
+dependencies:
+  - python=3.6
+  - pip
+  - pip:
+      - pandas
+      - numpy
+      - seaborn
+      - joblib
+      - scikit-learn==0.23.2
+      - azureml-mlflow
+name: azureml_55e08cda4455540c99a1b07be09f855c
