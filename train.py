@@ -33,12 +33,15 @@ def split_dataset(X, Y):
 
     return X_train, X_test, Y_train, Y_test
 
+# remove the column we'll predict
+
 def prepareDataset(df):
     Y = df['ArrDelay15'].values
     synth_df = df.drop(columns=['ArrDelay15'])
     print(collections.Counter(Y))
     return synth_df, Y
 
+# mlflow autolog metrics
 def analyze_model(clf, X_test, Y_test, preds):
         accuracy = accuracy_score(Y_test, preds)
         print(f'Accuracy', float(accuracy))
@@ -83,8 +86,7 @@ def analyze_model(clf, X_test, Y_test, preds):
         plt.show()
         plt.close()
 
-# az ml job create -f train.yml
-
+# read in the data, use local file or param for cloud run
 if __name__ == "__main__":
     
     parser = argparse.ArgumentParser()
@@ -96,16 +98,14 @@ if __name__ == "__main__":
 
     data = pd.read_csv(args.data+'/flightdelayweather_ds_clean.csv')
 
-    # mlflow.sklearn.autolog()
-
     X, y = prepareDataset(data)
 
-    #Split dataset
+    #Split the input dataset
     X_train, X_test, y_train, y_test = split_dataset(X, y)
     print(X_train.dtypes)
     print(y_train)
 
-    # Setup scikit-learn pipeline
+    # Run LightGBM classifier
     
     clf = LGBMClassifier(learning_rate=0.24945760279230222, max_bin=511,
                min_child_samples=29, n_estimators=80, num_leaves=21,
