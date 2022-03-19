@@ -8,7 +8,7 @@ You need access to an Azure subscription. If it’s a shared subscription, the o
 
 This repo [repo link] has the python scripts and data files you need to get started. 
 
-Hint: You need compute quota for AzureML in the region for the workspace for the VM family you want to use. 4 cores of DSv2 should be fine. 
+Hint: You need compute quota for AzureML in the region for the workspace for the VM family you want to use. 6 cores of any D series should be fine to create a compute instance, cluster, and realtime endpoint. 
 
 
 ## 1. Train and test Locally

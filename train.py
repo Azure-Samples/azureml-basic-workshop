@@ -109,7 +109,7 @@ if __name__ == "__main__":
     
     clf = LGBMClassifier(learning_rate=0.24945760279230222, max_bin=511,
                min_child_samples=29, n_estimators=80, num_leaves=21,
-               reg_alpha=0.0020334241010261135, reg_lambda=0.04344763354508823, metric='auc', is_unbalance='true')
+               reg_alpha=0.0020334241010261135, reg_lambda=0.04344763354508823, metric='auc', is_unbalance='false')
 
 
 # Analyze the model
