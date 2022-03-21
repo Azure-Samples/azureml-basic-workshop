@@ -39,6 +39,8 @@ What metrics do you think are important to measure quality of this prediction? T
 ## 3. Train in Cloud
 Now that you’ve confirmed the training code works, train the model in the cloud using an AzureML job. Use the train.py and flightdelayweather_ds_clean.csv from the repo (but imagine that you’re training on petabytes of data). Try this from both the Studio and the v2 CLI.
 
+Look at differences between running locally and logging metrics and submitting a run. One example is the training script is saved as as artifact when submitting a run. This is helpful for reproducibilty. 
+
 Hints: Your training run needs an environment with the package dependencies and the CSV file in a dataset as input to train with. There is more than one way to handle this. Remember that the local training run you did assumed a local data file instead of passing this in as a parameter as --data. 
 
 
