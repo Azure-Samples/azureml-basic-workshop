@@ -4,7 +4,7 @@ The objective of this workshop is to work through a basic end-to-end flow for a 
 
 The AzureML docs and samples will help you figure out syntax. The scenario has been tested and you’ll see that the product is pretty good overall. Things are not consistent and some experiences are still rough. With the exception of some internal private preview features, this is what our customers see.
 
-This is hands-on and not a demo or tour of the product. The knowledge required of python, Linux, AzureML and Azure is minimal. There are some hints below to point you in the right direction. Search the Web, read docs and samples, and reach out to team members for help if you get stuck.
+This is hands-on and not a demo or tour of the product. The knowledge required of python, Linux, AzureML and Azure is minimal. There are some hints below to point you in the right direction. Search the Web, read docs and samples, and reach out to team members for help if you get stuck. Write down issues you find, file bugs or edit the docs and samples. This workshop is to learn and improve our customer expereince. 
 
 
 ## 0. Getting Started
@@ -15,17 +15,19 @@ This repo has the python scripts and data files you need to get started.
 
 Hint: You need compute quota for AzureML in the region for the workspace for the VM family you want to use. 4 cores of any D series should be fine to create a compute instance, cluster, and realtime endpoint. 
 
+Create your workspace and then let's get started. 
 
-## 1. Train and test Locally
-First step is to train a model locally to make sure it works. Create a Compute Instance, and work from Visual Studio Code. The script uses MLFlow logging and will log to an AzureML workspace without having to submit a run. Take a look at the experiments in Studio.
+
+## 1. Train and test Interactively
+First step is to train a model ineractively to make sure it works. Create a Compute Instance, and work with Visual Studio Code. The train.py script uses MLFlow logging and will log to an AzureML workspace without having to submit a run. Take a look at the experiments in Studio.
 
 Once you’ve trained a model locally, try the score.py script to test it locally on a subset of data. 
 
-Hints: For local training, the train.py script is setup to use the training data csv file in the same directory. It writes the model file to a new folder, deleting an existing folder with the same name if found. You will need to configure your Python environment with the packages needed for the training script. Use the conda.yml file, then select and activate the environment using the Python: Select Interpreter command from the Command Palette.
+Hints: For local training, the train.py script is setup to use the training data csv file in the same directory. It writes the model file to a new folder, deleting an existing folder with the same name if found. You will need to configure your Python environment with the packages needed for the training script. Use the conda.yml file, then select and activate the environment using the Python: Select Interpreter command from the Command Palette. Your shell should also be in the directory of the files.
 
 
 ## 2. Experiment and Explore the Data
-Now we get into the science part to experiment on how we could improve the model. Edit the train.py file and change [param] to True.
+Now we get into the science part to experiment on how we could improve the model. Edit the train.py file and change 'is_unbalance' for the LightGBM Classifier to True.
 
 Train the model again, run the predict script, and compare the outputs. Look at the two runs in the Studio and compare metrics between the two models model. What do you see?
 
@@ -33,7 +35,7 @@ The data imbalance hyperparameter in LightGBM helps in the case where the traini
 
 Try different ways to explore the data. Open it in Excel, important it as a tabular dataset, or use Python tools. Think about how we can help with this.
 
-What metrics do you think are important to measure quality of this prediction? Try optimizing for a different metric.
+What metrics do you think are important to measure quality of this prediction? Try optimizing for a different metric in the classifier.
 
 
 ## 3. Train in Cloud
