@@ -74,6 +74,3 @@ Now think about this as a Kaggle competition. Have some fun and try out differen
 ## 8. Bonus: Create a component
 Create a component from the train.py file and use it in a pipeline to re-train a model that is then used for batch scoring. Try this using the CLI and Studio.
 
-
-## If you're really stuck
-TODO Look in the <TODO> branch for more help.
