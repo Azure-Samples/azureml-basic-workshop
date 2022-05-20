@@ -23,7 +23,7 @@ First step is to train a model ineractively to make sure it works. Create a Comp
 
 Once you’ve trained a model locally, try the score.py script to test it locally on a subset of data. 
 
-Hints: For local training, the train.py script is setup to use the training data csv file in the same directory. It writes the model file to a new folder, deleting an existing folder with the same name if found. You will need to configure your Python environment with the packages needed for the training script. Use the conda.yml file, then select and activate the environment using the Python: Select Interpreter command from the Command Palette. Your shell should also be in the directory of the files.
+Hints: Don't start with your laptop or desktop, start with a Compute Instance initially. For interactive training, the train.py script is setup to use the training data csv file in the same directory. It writes the model file to a new folder, deleting an existing folder with the same name if found. You will need to configure your Python environment with the packages needed for the training script. Use the conda.yml file, then select and activate the environment using the Python: Select Interpreter command from the Command Palette. Your shell should also be in the directory of the files.
 
 
 ## 2. Experiment and Explore the Data
